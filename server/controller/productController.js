@@ -2,8 +2,10 @@ import productSchema from "../models/productShema.js"
 
 
 const product = {
-    getProducct : async (req, res) => {
+    getProduct : async (req, res) => {
+        
         try{
+            console.log( 'Request for product received')
             const products = await productSchema.find({})
             res.send(products)
         }
@@ -59,3 +61,5 @@ const product = {
         })
     }
 }
+
+export default product
