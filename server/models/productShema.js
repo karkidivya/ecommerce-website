@@ -23,7 +23,19 @@ const ProductSchema = new Schema({
         type: String,
         required: true,
     },
-    
+    isOld: {
+        type: Boolean,
+        required: true,
+    },
+    oldPrice: {
+        type: Number,
+        required: true
+    },
+
+    rating: {
+        type : Number,
+        required: true,
+    }
 
 })
 
