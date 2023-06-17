@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 //import database class
 import Database from './utils/db.js'
 //import schema controller
-import productController from './controller/productController.js'
+import productController from './controller/product/productController.js'
 
 dotenv.config()
 
