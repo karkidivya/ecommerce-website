@@ -38,6 +38,7 @@ export const Header = () => {
           { UserInfo && <p>{UserInfo.name}</p>}
       </div>
       </div>
+  
      
     </div>
   )

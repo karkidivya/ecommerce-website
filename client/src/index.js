@@ -9,10 +9,14 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { app } from './firebase/firebase'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
+    <div>
     <Provider store={store} app={app}>
         <PersistGate loading={"loading"}persistor={persistor}>
             <App />
         </PersistGate>
     </Provider>
+
+    </div>
 );
