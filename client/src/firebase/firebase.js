@@ -2,12 +2,13 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDDxZYiYF7akCVloFT1kRFNIQwHFr0SnO4",
-  authDomain: "bazarapp-cc832.firebaseapp.com",
-  projectId: "bazarapp-cc832",
-  storageBucket: "bazarapp-cc832.appspot.com",
-  messagingSenderId: "329104631147",
-  appId: "1:329104631147:web:d907a1ab17c0f57df2182e"
+  apiKey: "AIzaSyCn7vPtkXzqaUNGhaphIivdOJaXrnYtajY",
+  authDomain: "ecommerce-pulchowk.firebaseapp.com",
+  projectId: "ecommerce-pulchowk",
+  storageBucket: "ecommerce-pulchowk.appspot.com",
+  messagingSenderId: "318738884757",
+  appId: "1:318738884757:web:22eddbe4422651befe939c",
+  measurementId: "G-417H79Y7ER"
 };
 
 // Initialize Firebase
