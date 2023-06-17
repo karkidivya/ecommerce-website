@@ -9,14 +9,14 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 export const Footer = () => {
   return (
-    <div className='bg-black text-[#949494] py-10 px-7 font-titleFont flex flex-row justify-between'>
-      <div className=' flex flex-col gap-7'>
-        <div className='flex flex-col gap-7'>
-          <img className=' h-10 w-20' src={LogoLight} alt="" />
-          <p className='text-white text-sm tracking-wide'>© ReactBD.com</p>
+    <div className='bg-black text-[#949494] py-10 px-7 font-titleFont grid  sm:grid-cols-3 grid-cols-1'>
+      <div className=' flex flex-col gap-7 m-auto'>
+        <div className='flex flex-col gap-7 '>
+          <img className='m-auto h-10 w-20' src={LogoLight} alt="" />
+          <p className='m-auto text-white text-sm tracking-wide'>© ReactBD.com</p>
           <img src={'/img/payment.png'} className='w-80' alt="" />
         </div>
-        <div className='flex flex-row gap-3'>
+        <div className='flex flex-row gap-3 m-auto'>
           <GitHubIcon/>
           <YouTubeIcon/>
           <FacebookIcon/>
@@ -24,14 +24,14 @@ export const Footer = () => {
           <InstagramIcon/>
         </div>
       </div>
-      <div className="">
+      <div className=" m-auto">
         <h2 className='text-xl text-white 300 mb-3'>Locate Us</h2>
         <p>MBD.RM, MUSCAT OMAN</p>
         <p>Mobile: 009683732</p>
         <p>Phone: 00363528</p>
         <p>Email: bazaar667@gmail.com</p>
       </div>
-      <div>
+      <div className = ' m-auto'>
         <h2 className='text-xl text-white 300 mb-3'>Profile</h2>
         <p>My Account</p>
         <p>Checkout</p>
