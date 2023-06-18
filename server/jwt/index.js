@@ -21,9 +21,20 @@ const logout = ( req ) =>{
 }
 
 const handleAuthorization = ( req) =>{
-    
+    const id = req.body.id
+    const password = req.body.password
+
+    result = verifyId(id, password)
+    if( result){
+        const token = generateToken( req )
+        return token
+    }
+    else{
+        return false
+    }
 }
 const validateUser = ( req ) =>{
     const token = req.body.authrization
     return validateToken( token) 
 }
+
