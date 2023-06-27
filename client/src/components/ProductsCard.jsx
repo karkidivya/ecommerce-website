@@ -43,8 +43,8 @@ export const ProductsCard = ({product}) => {
           <div className='flex justify-between items-center'>
           <p>{category}</p>
           <div className='flex gap-2 justify-end'>
-            <p className='line-through text-gray-500'>${price}</p>
-            <p className='font-semibold'>${oldPrice}</p>
+            <p className='line-through text-gray-500'>Rs. {price}</p>
+            <p className='font-semibold'>Rs. {oldPrice}</p>
           </div>
 
         </div>

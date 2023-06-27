@@ -7,7 +7,7 @@ import { productsData } from './api/Api';
 import { createBrowserRouter,Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
 import { Product } from './pages/product/product';
 import { Login } from './pages/login/Login';
-
+import Admin from './pages/admin/admin'
 
 const Layout = ()=>{
   return <div>
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login/>
+      },
+      {
+        path: '/admin',
+        element: <Admin />
       }
     ]
   }
