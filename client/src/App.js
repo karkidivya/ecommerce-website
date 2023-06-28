@@ -8,7 +8,8 @@ import { createBrowserRouter,Outlet, RouterProvider, ScrollRestoration } from 'r
 import { Product } from './pages/product/product';
 import { Login } from './pages/login/Login';
 import Admin from './pages/admin/admin'
-
+import Dashboard from './components/admin/Dashboard';
+import AdminLogin from './components/admin/Login'
 const Layout = ()=>{
   return <div>
     <Header/>
@@ -40,12 +41,27 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login/>
       },
+    ]
+  },
+  {
+    path: '/admin',
+    element: <Admin />,
+    children :[
       {
         path: '/admin',
-        element: <Admin />
+        element: <AdminLogin />,
+      },
+      {
+        path: '/admin/login',
+        element: <AdminLogin />,
+      },
+      {
+        path: '/admin/dashboard',
+        element: <Dashboard />
       }
     ]
   }
+  
 ]) 
 
 
