@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { TextField, Button, Typography } from '@mui/material';
+import {Box, TextField, Button, Typography } from '@mui/material';
 import AdminNav from './AdminNav'
+import { Outlet } from 'react-router-dom';
 
 const AdminHeader = () =>{
     return<>
-        <Typography variant = 'h4' align ='center'>
+        <Typography variant = 'h4' align ='center' sx = {{border: '2px solid grey'}}>
             Admin
         </Typography>
     </>
@@ -12,8 +13,14 @@ const AdminHeader = () =>{
 
 const Dashboard = () =>{
     return <>
+    <Box >
         <AdminHeader />
-        <AdminNav/>
+        <Box sx = {{display : 'flex'}}>
+            <AdminNav/>
+            <Outlet />
+        </Box>
+    </Box>
+
     </>
 };
 

@@ -10,6 +10,7 @@ import { Login } from './pages/login/Login';
 import Admin from './pages/admin/admin'
 import Dashboard from './components/admin/Dashboard';
 import AdminLogin from './components/admin/Login'
+import AddItem from './components/admin/AddItem'
 const Layout = ()=>{
   return <div>
     <Header/>
@@ -57,7 +58,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/admin/dashboard',
-        element: <Dashboard />
+        element: <Dashboard />,
+        children:[
+          {
+            path: '/admin/dashboard/additem',
+            element: <AddItem />,
+          }
+        ]
       }
     ]
   }
@@ -67,9 +74,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="app">
       <RouterProvider router={router}/>
-    </div>
   );
 }
 

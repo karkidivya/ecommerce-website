@@ -20,56 +20,92 @@ import { useNavigate } from 'react-router-dom';
 export default function SignIn() {
     const navigate = useNavigate();
     const handleSubmit = (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const email= data.get('email')
-      const  password= data.get('password')
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email= data.get('email')
+    const  password= data.get('password')
 
-      if ( email == 'admin' && password == 'admin' ){
-          navigate( '/admin/dashboard')
-      }  
+    if ( email == 'admin' && password == 'admin' ){
+        navigate( '/admin/dashboard')
+    }
+
+    
   };
 
   return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            marginBottom: 8
+            marginBottom: 8,
+            width: '100%'
           }}
         >
-          <Typography variant = 'h3' component = 'h1' sx = {{py: 2}}>
-            Welcome Admin
-          </Typography>
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' ,my: 2}}>
-            <LockOutlinedIcon />
-          </Avatar>
+
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Email Address"
-              name="email"
+              label="Product Name"
+              name="productName'"
               autoFocus
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
+              name="productCategory"
+              label="Product Category"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="price"
+              label="price"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="oldPrice"
+              label="Old Price"
               id="password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="Image"
+              label="Image"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="description"
+              label="Description"
+              id="password"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="productCategory"
+              label="Product Category"
+              id="password"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="productCategory"
+              label="Product Category"
+              id="password"
             />
             <Button
               type="submit"
@@ -77,22 +113,10 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Add
             </Button>
-            <Grid container sx = {{pt: 2}}>
-              <Grid item xs >
-                <Link href="#" variant="body2" sx = {{ textDecoration: 'none'}}>
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2" sx = {{textDecoration: 'none'}}>
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
-      </Container>
+      
   );
 }
