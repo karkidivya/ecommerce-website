@@ -1,16 +1,7 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -20,18 +11,33 @@ import { useNavigate } from 'react-router-dom';
 export default function SignIn() {
     const navigate = useNavigate();
     const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const email= data.get('email')
-    const  password= data.get('password')
-
-    if ( email == 'admin' && password == 'admin' ){
-        navigate( '/admin/dashboard')
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const product = {
+        title: data.get('productName'),
+        price: Number(data.get( 'price')),
+        isOld: true,
+        oldPrice: Number(data.get('oldPrice')),
+        category: data.get('productCategory'),
+        image: data.get('image'),
+        rating: 0
+      }
+      console.log( product )
+      storeProduct( product )
     }
-
     
-  };
 
+    const storeProduct = (product ) =>{
+      fetch( 'http://localhost:5000/additem',{
+        method: 'POST',
+        headers:{
+          "Content-Type": "Application/json"
+        },
+        body:JSON.stringify( {product} )
+      }).then( ( res ) =>{
+        console.log( res )
+      })
+    }
   return (
         <Box
           sx={{
@@ -49,9 +55,8 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
               label="Product Name"
-              name="productName'"
+              name="productName"
               autoFocus
             />
             <TextField
@@ -74,13 +79,12 @@ export default function SignIn() {
               fullWidth
               name="oldPrice"
               label="Old Price"
-              id="password"
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="Image"
+              name="image"
               label="Image"
             />
             <TextField
@@ -89,23 +93,6 @@ export default function SignIn() {
               fullWidth
               name="description"
               label="Description"
-              id="password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="productCategory"
-              label="Product Category"
-              id="password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="productCategory"
-              label="Product Category"
-              id="password"
             />
             <Button
               type="submit"

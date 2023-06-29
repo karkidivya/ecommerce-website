@@ -62,11 +62,14 @@ const product = {
     },
     createProduct: async( req, res) =>{
         try {const product = req.body.product
-        const producttModel = new  productSchema( product)
-        await producttModel.save()
-        res.status(200).json({ task: 'createProduct', status: 'successful'})
+            console.log( "New product is to be saved to the database")
+            console.log( req.body )
+            const producttModel = new  productSchema( product)
+            await producttModel.save()
+            res.status(200).json({ task: 'createProduct', status: 'successful'})
         }catch( error ){
-            return restatus( 500 ).json( { task: 'createProduct',status: 'unsuccessful',  reason: error })
+            console.log ( error )
+            return res.status( 500 ).json( { task: 'createProduct',status: 'unsuccessful',  reason: error })
         }
     }
 }

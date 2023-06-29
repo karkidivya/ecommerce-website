@@ -1,4 +1,4 @@
-import userSchema from "../../models/userSchema";
+import userSchema from "../../models/userSchema.js";
 
 const userController = {
     //create user
