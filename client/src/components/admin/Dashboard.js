@@ -1,16 +1,22 @@
-const Dashboard = () =>{
-    return(
-        <div>
-            This is a dashboard
+import React, { useState } from 'react';
+import { TextField, Button, Typography } from '@mui/material';
+import AdminNav from './AdminNav'
 
-            to add Here
-            1 add product
-            2 delete product 
-            3 edit product
-            4 view sales
-            5 some sort of analytics
-        </div>
-    )
+const AdminHeader = () =>{
+    return<>
+        <Typography variant = 'h4' align ='center'>
+            Admin
+        </Typography>
+    </>
 }
+
+const Dashboard = () =>{
+    return <>
+        <AdminHeader />
+        <AdminNav/>
+    </>
+};
+
+
 
 export default Dashboard

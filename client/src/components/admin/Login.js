@@ -26,7 +26,7 @@ export default function SignIn() {
     const  password= data.get('password')
 
     if ( email == 'admin' && password == 'admin' ){
-        navigate( '/dashboard')
+        navigate( '/admin/dashboard')
     }
 
     
