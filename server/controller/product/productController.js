@@ -13,22 +13,6 @@ const product = {
             console.log('An error from productController.js occurred', error)
         }
     },
-    storeProduct: async ( req, res) =>{
-        try{
-            const product = new productSchema({
-                title: req.body.title,
-                description: req.body.description,
-                price: req.body.price,
-                category: req.body.category,
-                image: req.body.image
-            })
-            await product.save()
-            res.status(200).json( {task: 'storeProduct', status: 'successful'})
-        }
-        catch(error){
-            console.log( 'An error occurred', error)
-        }
-    },
 
     updateProduct: async ( req, res) =>{
         try{
@@ -49,9 +33,19 @@ const product = {
 
         }
     },
-    getProductId: async( req, res) =>{
+    deleteProductById: async( req, res) =>{
+        const { id } = req.params
+        try{
+            await productSchema.deleteOne( { _id: id })
+            res.status( 200).json( { task: 'deleteItem', status: 'successful'})
+        }
+        catch( error ){
+            console.log( 'An error occurred', error)
+        }
+    },
+    getProductById: async( req, res) =>{
         const productId = req.body.id
-        productSchema.findById( productId, ( error, data ) =>{
+        await productSchema.findById( productId, ( error, data ) =>{
             if( error ){
                 res.status(500).json({message: 'An error occurred'})
             }
@@ -60,7 +54,7 @@ const product = {
             }
         })
     },
-    createProduct: async( req, res) =>{
+    storeProduct: async( req, res) =>{
         try {const product = req.body.product
             console.log( "New product is to be saved to the database")
             console.log( req.body )

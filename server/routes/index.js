@@ -12,7 +12,10 @@ router.get('/products', productController.getProduct)
 // router.post('/login', userController.login)
 // router.post('/register', userController.register)
 
-router.post( '/additem', productController.createProduct)
+router.get('/getproduct/:id', productController.getProductById )
+router.delete('/deleteitem/:id',productController.deleteProductById)
+
+router.post( '/additem', productController.storeProduct)
 // routere.post('/')
 
 export default router

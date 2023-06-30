@@ -16,6 +16,13 @@ const AdminNav = ()=>{
     const addItems = ()  =>{
         navigate('/admin/dashboard/additem')
     }
+
+    const deleteItem = () =>{
+        navigate('/admin/dashboard/deleteitem')
+    }
+    const toDashboard = () =>{
+        navigate( '/admin/dashboard')
+    }
     const clickAction = () =>{
         console.log('Click action has been called')
     }
@@ -25,7 +32,7 @@ const AdminNav = ()=>{
         <List sx = { {p: 0}}>
             <ListItemButton 
                 selected = { selectedIndex === 0 }
-                onClick = { () =>{ handleClick( clickAction, 0)}}
+                onClick = { () =>{ handleClick( toDashboard, 0)}}
             >
                 <ListItemText sx = {{ textAlign : 'center'}} primary = 'Overview' />
             </ListItemButton>
@@ -38,7 +45,7 @@ const AdminNav = ()=>{
             </ListItemButton>
             <ListItemButton
                 selected = { selectedIndex === 2}
-                onClick = { () =>{ handleClick( clickAction, 2)}}               
+                onClick = { () =>{ handleClick( deleteItem, 2)}}               
             >
                 <ListItemText  sx = {{ textAlign : 'center'}} primary = 'Delete Item' />
             </ListItemButton>

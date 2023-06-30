@@ -11,6 +11,7 @@ import Admin from './pages/admin/admin'
 import Dashboard from './components/admin/Dashboard';
 import AdminLogin from './components/admin/Login'
 import AddItem from './components/admin/AddItem'
+import DeleteItem from './components/admin/DeleteItem'
 const Layout = ()=>{
   return <div>
     <Header/>
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
           {
             path: '/admin/dashboard/additem',
             element: <AddItem />,
+          },
+          {
+            path: '/admin/dashboard/deleteitem',
+            element: <DeleteItem />
           }
         ]
       }
