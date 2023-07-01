@@ -13,14 +13,13 @@ const AdminHeader = () =>{
 
 const Dashboard = () =>{
     return <>
-    <Box >
-        <AdminHeader />
-        <Box sx = {{display : 'flex'}}>
-            <AdminNav/>
-            <Outlet />
+        <Box>
+            <AdminHeader />
+            <Box sx = {{display : 'flex'}}>
+                <AdminNav/>
+                <Outlet />
+            </Box>
         </Box>
-    </Box>
-
     </>
 };
 
