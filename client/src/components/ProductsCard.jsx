@@ -9,7 +9,7 @@ export const ProductsCard = ({product}) => {
 
   const dispatch =useDispatch()
 
-  const {title, oldPrice, price, image, category, isNew, description} =product;
+  const {title, oldPrice, price, image, category, isOld, description} =product;
   const navigate = useNavigate()
 
   const _id = title;
@@ -43,8 +43,8 @@ export const ProductsCard = ({product}) => {
           <div className='flex justify-between items-center'>
           <p>{category}</p>
           <div className='flex gap-2 justify-end'>
-            <p className='line-through text-gray-500'>${price}</p>
-            <p className='font-semibold'>${oldPrice}</p>
+            <p className='line-through text-gray-500'>Rs. {price}</p>
+            <p className='font-semibold'>Rs. {oldPrice}</p>
           </div>
 
         </div>
@@ -61,7 +61,7 @@ export const ProductsCard = ({product}) => {
           </button>
         </div>
         <div className='top-2 right-2 absolute'>
-          {isNew && <p className='bg-black  text-white font-semibold px-6 py-1'>Sale</p>}
+          {!isOld && <p className='bg-black  text-white font-semibold px-6 py-1'>Sale</p>}
         </div>
       </div>
       <ToastContainer

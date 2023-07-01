@@ -7,8 +7,11 @@ import { productsData } from './api/Api';
 import { createBrowserRouter,Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
 import { Product } from './pages/product/product';
 import { Login } from './pages/login/Login';
-
-
+import Admin from './pages/admin/admin'
+import Dashboard from './components/admin/Dashboard';
+import AdminLogin from './components/admin/Login'
+import AddItem from './components/admin/AddItem'
+import DeleteItem from './components/admin/DeleteItem'
 const Layout = ()=>{
   return <div>
     <Header/>
@@ -39,17 +42,44 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login/>
+      },
+    ]
+  },
+  {
+    path: '/admin',
+    element: <Admin />,
+    children :[
+      {
+        path: '/admin',
+        element: <AdminLogin />,
+      },
+      {
+        path: '/admin/login',
+        element: <AdminLogin />,
+      },
+      {
+        path: '/admin/dashboard',
+        element: <Dashboard />,
+        children:[
+          {
+            path: '/admin/dashboard/additem',
+            element: <AddItem />,
+          },
+          {
+            path: '/admin/dashboard/deleteitem',
+            element: <DeleteItem />
+          }
+        ]
       }
     ]
   }
+  
 ]) 
 
 
 function App() {
   return (
-    <div className="app">
       <RouterProvider router={router}/>
-    </div>
   );
 }
 
