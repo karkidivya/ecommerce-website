@@ -20,13 +20,14 @@ export const Login = () => {
   const handleGoogleLogin = (e)=>{
     e.preventDefault()
     signInWithPopup(auth, Provider).then((result)=>{
-      const user = result.user;
-      dispatch(addUser({
-        id: user.uid,
-        name: user.displayName,
-        email: user.email,
-        image: user.photoURL
-      }))
+      const userInfo = {
+        id: result.user.uid,
+        name: result.user.displayName,
+        email: result.user.email,
+        image: result.user.photoURL
+      }
+      
+      dispatch(addUser( userInfo ))
       setTimeout(()=>{
         navigate('/')
       }, 1500)

@@ -2,34 +2,36 @@ import userSchema from "../../models/userSchema.js";
 
 const userController = {
     //create user
-    createUser: async(param ) =>{
+    createUser: async(req, res ) =>{
         try{
-            const newUser = new userSchema( param )
+            const user = req.body.user;
+            const newUser = new userSchema( user )
             await newUser.save()
+            res.send( 200 ).json( { status: 'successful', task: 'createuser'})
         }
         catch(error){
             console.log('An error occurred', error)
         }
     },
     //verify user
-    verifyUser: async(  param ) =>{
-        try{
-            const user = await userSchema.findOne( {email: param.email} )
-            if( user ){
-                if( user.password === param.password ){
-                    return user
-                }
-                else{
-                    return false
-                }
-            }
-            else{
-                return false
-            }
-        }catch( error ) {
-            console.log('An error occurred', error)
-        }
-    },
+    // getUserData: async( req, res ) =>{
+    //     try{
+    //         const user = await userSchema.findOne( {email: param.email} )
+    //         if( user ){
+    //             if( user.password === param.password ){
+    //                 return user
+    //             }
+    //             else{
+    //                 return false
+    //             }
+    //         }
+    //         else{
+    //             return false
+    //         }
+    //     }catch( error ) {
+    //         console.log('An error occurred', error)
+    //     }
+    // },
 
 }
 
