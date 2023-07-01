@@ -18,8 +18,13 @@ const reviewModel = new Mongoose.Schema({
         required: true
     },
     user: {
-        type: ,
+        type: String,
         required: true
     }
 
 }, { timestamps: true})
+
+const review = Mongoose.model( 'review', reviewModel)
+
+
+export default review

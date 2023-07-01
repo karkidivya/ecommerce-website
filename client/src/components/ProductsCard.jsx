@@ -9,7 +9,7 @@ export const ProductsCard = ({product}) => {
 
   const dispatch =useDispatch()
 
-  const {title, oldPrice, price, image, category, isOld, description} =product;
+  const {title, oldPrice, price, image, category, isOld, description} = product;
   const navigate = useNavigate()
 
   const _id = title;
