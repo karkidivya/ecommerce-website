@@ -29,7 +29,7 @@ export default function SignIn() {
         .then(
             (result) => {
                 setIsLoaded(true);
-                setItems(result);
+                setItems(result.payload);
                 console.log(result)
             },
 
@@ -72,6 +72,7 @@ export default function SignIn() {
 
     const data = Object.values(items);
     console.log(data);
+
     function search(items) {       //returns true if the requuired item in found in the object
       return items.filter((item) => {
           return searchParam.some((newItem) => {
