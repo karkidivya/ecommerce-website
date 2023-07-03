@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import StarIcon from "@mui/icons-material/Star";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/bazaarSlice";
 import { ToastContainer, toast } from "react-toastify";
-import { useSelector } from "react-redux";
 import Box from '@mui/material/Box';
 
-import { styled } from "@mui/material/styles";
-
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
-import ReviewBox from './review/reviewBox';
-import Comment from './review/comment';
+import ReviewForm from '../../components/review/ReviewForm'
 
 export const Product = () => {
   const dispatch = useDispatch();
@@ -126,20 +120,19 @@ export const Product = () => {
           theme="dark"
         /> 
       </div >
-      <div >
-        <Box sx={{margin:'80px'}}>
-      <Grid container spacing={2}>
-  <Grid item xs={6}>
-    <div>
-        <ReviewBox/>
-    </div>
-    </Grid>
-  <Grid item xs={6}>
-    <div>
-        <Comment/>
-    </div>
-  </Grid>
-</Grid></Box></div>
+      <Box sx={{margin:'80px'}}>
+    
+        <Grid container spacing={2}>
+        <Grid item xs = { 6}>
+          <ReviewForm />
+        </Grid>
+        {/* <Grid item xs={6}>
+          <div>
+              <Comment/>
+          </div>
+        </Grid> */}
+        </Grid>
+      </Box>
     </>
   );
 };

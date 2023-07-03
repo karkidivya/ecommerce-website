@@ -4,9 +4,10 @@ const reviewController = {
     createReview: async ( req, res) =>{
         try{
             const review = req.body.review;
+            console.log( review )
             const validReview = new reviewSchema( review )
             await validReview.save()
-            res.send( 200).json( { status: 'successful', task: 'createreview'})
+            res.sendStatus( 200).json( { status: 'successful', task: 'createreview'})
         }
         catch( error){
             console.log( 'An error occurred', error )
@@ -17,7 +18,7 @@ const reviewController = {
         try{
             const reviewProductId = req.body.productId;
             const review = await reviewSchema.find( { productId })             
-            res.send( 200 ).json( { status: 'successful', task: 'getreview', payload: review })
+            res.sendStatus( 200 ).json( { status: 'successful', task: 'getreview', payload: review })
         }
         catch( error ){
             console.log( 'An error occurred', error);
