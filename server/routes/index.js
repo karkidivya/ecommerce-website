@@ -19,7 +19,7 @@ router.post( '/createuser', userController.createUser )
 
 //reveiw routers
 router.post( '/createreview', reviewController.createReview )
-router.get( 'getreview/:id', reviewController.getReview)
+router.get( '/getreview/:id', reviewController.getReview)
 
 
 // routere.post('/')

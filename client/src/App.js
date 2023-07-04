@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Cart } from './pages/cart/cart';
 import { productsData } from './api/Api';
+import getReview  from './api/getReview'
 import { createBrowserRouter,Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
 import { Product } from './pages/product/product';
 import { Login } from './pages/login/Login';
@@ -32,8 +33,9 @@ const router = createBrowserRouter([
         loader: productsData
       },
       {
-        path:'/product/:id',
-        element: <Product/>
+        path:'/product/:name/:id',
+        element: <Product/>,
+        loader: getReview
       },
       {
         path: '/cart',

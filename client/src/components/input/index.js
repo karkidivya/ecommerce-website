@@ -92,12 +92,15 @@ const Input = (props) => {
     return (
       <div className={styles}>
         {label && <label>{label}</label>}
-        <Rating name = { name} 
-                value = { value }
-                onChange = {( event, newValue ) =>{
-                  _onChange( event )
-                }}
-        />
+        <div>
+          <Rating name = { name} 
+                  value = { value }
+                  onChange = {( event, newValue ) =>{
+                    _onChange( event )
+                  }}
+          />
+          
+        </div>
         <span className='invalid-message'>{error && error[0]}</span>
       </div>
     );
@@ -105,7 +108,7 @@ const Input = (props) => {
 
     return (
       <div>
-        {label && <label>{label}</label>}
+        {label && <label >{label}</label>}
         <div className='input-text-block'>
           <input
             className={'px-2 py-2 w-100 customInput'}

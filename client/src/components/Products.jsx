@@ -1,7 +1,6 @@
 import { ProductsCard } from "./ProductsCard"
 
 export const Products = ({products})=>{
-  console.log(products)  
 
   return <div className="py-10 cursor-pointer">
     <div className="flex flex-col items-center gap-4">

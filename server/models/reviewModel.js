@@ -20,6 +20,10 @@ const reviewModel = new Mongoose.Schema({
     user: {
         type: String,
         required: true
+    },
+    userImage:{
+        type: String,
+        required: true
     }
 
 }, { timestamps: true})

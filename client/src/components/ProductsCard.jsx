@@ -9,20 +9,19 @@ export const ProductsCard = ({product}) => {
 
   const dispatch =useDispatch()
 
-  const {title, oldPrice, price, image, category, isOld, description} = product;
+  const {title, oldPrice, price, image, category, isOld, description, _id} = product;
   const navigate = useNavigate()
 
-  const _id = title;
 
   const idString = (Title)=>{
     const newIdString = String(Title).toLowerCase().split(" ").join("");
     return newIdString;
   } 
-  const rootId = idString(_id)
+  const rootId = idString(title)
   // console.log(rootId)
 
   const handleDetails = ()=>{
-    navigate(`/product/${rootId}`,{
+    navigate(`/product/${rootId}/${_id}`,{
       state: {
         item: product
       }
@@ -50,7 +49,7 @@ export const ProductsCard = ({product}) => {
         </div>
         <div className='flex justify-between mt-2'>
           <button onClick={()=>dispatch(addToCart({
-            _id: product._id, 
+            _id: _id, 
             title: product.title,
             image: product.image,
             price: product.price,

@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 export const Header = () => {
   const productData = useSelector((state)=> state.bazar.productData)
   const UserInfo = useSelector((state)=> state.bazar.userInfo)
-  console.log(UserInfo)
   // console.log(productData)
   return (
     <div className='z-50 w-full h-30 bg-white border-b-[1px] z-index-1 sticky top-0 border-b-gray-800 font-titleFont '>

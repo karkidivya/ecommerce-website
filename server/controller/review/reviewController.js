@@ -7,7 +7,7 @@ const reviewController = {
             console.log( review )
             const validReview = new reviewSchema( review )
             await validReview.save()
-            res.sendStatus( 200).json( { status: 'successful', task: 'createreview'})
+            res.status( 200).json( { status: 'successful', task: 'createreview'})
         }
         catch( error){
             console.log( 'An error occurred', error )
@@ -16,9 +16,10 @@ const reviewController = {
 
     getReview: async ( req, res ) =>{
         try{
-            const reviewProductId = req.body.productId;
+            const productId = req.params.id;
+            console.log( productId )
             const review = await reviewSchema.find( { productId })             
-            res.sendStatus( 200 ).json( { status: 'successful', task: 'getreview', payload: review })
+            res.status( 200 ).json( { status: 'successful', task: 'getreview', payload: review })
         }
         catch( error ){
             console.log( 'An error occurred', error);

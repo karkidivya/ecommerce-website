@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useLoaderData } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/bazaarSlice";
 import { ToastContainer, toast } from "react-toastify";
 import Box from '@mui/material/Box';
 
-import Grid from "@mui/material/Grid";
-
-import ReviewForm from '../../components/review/ReviewForm'
-
+import Review from '../../components/review'
 export const Product = () => {
   const dispatch = useDispatch();
 
+  const reviews = useLoaderData();
   const [details, setDetails] = useState({});
   let [baseQty, setBaseQty] = useState(1);
 
@@ -121,17 +119,7 @@ export const Product = () => {
         /> 
       </div >
       <Box sx={{margin:'80px'}}>
-    
-        <Grid container spacing={2}>
-        <Grid item xs = { 6}>
-          <ReviewForm />
-        </Grid>
-        {/* <Grid item xs={6}>
-          <div>
-              <Comment/>
-          </div>
-        </Grid> */}
-        </Grid>
+          <Review reviews  = { reviews }/>
       </Box>
     </>
   );

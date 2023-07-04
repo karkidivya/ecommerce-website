@@ -12,10 +12,6 @@ import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
-// const recommedableSelect = [
-//   { value: 1, label: 'Yes' },
-//   { value: 0, label: 'No' }
-// ];
 
 const ReviewForm = () => {
   
@@ -49,7 +45,8 @@ const ReviewForm = () => {
       const comment = review.review
       const  rating = review.rating
       const user = userInfo.id;
-      const reviewObject = { title, productId, rating, comment, user }
+      const userImage = userInfo.image
+      const reviewObject = { title, productId, rating, comment, user , userImage }
       console.log( reviewObject )
       addReview( reviewObject );
     }
@@ -59,7 +56,7 @@ const ReviewForm = () => {
   };
 
   return (
-    <div className='bg-white p-4 box-shadow-primary add-review'>
+    <div className=''>
       <form onSubmit={handleSubmit} noValidate>
         <h3 className='mb-3'>Add Review</h3>
             <Input
@@ -91,18 +88,10 @@ const ReviewForm = () => {
                 reviewChange(name, value);
               }}
             />
-            {/* <SelectOption
-              error={reviewFormErrors['isRecommended']}
-              label={'Will you recommend this product?'}
-              name={'isRecommended'}
-              value={reviewFormData.isRecommended}
-              options={recommedableSelect}
-              handleSelectChange={value => {
-                reviewChange('isRecommended', value);
-              }} */}
-            {/* /> */}
         <div className='mt-4'>
-          <Button type = 'submit' >
+          <Button 
+              type = 'submit'
+           >
               Publish Review
           </Button>
         </div>
