@@ -10,7 +10,7 @@ export const Products = ({products})=>{
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
       </p>
     </div>
-    <div className="max-w-screen-xl mx-auto py-10 grid px-8 sm:px-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1  gap-10">
+    <div className="max-w-screen-xl mx-auto py-10 grid px-8 sm:px-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-10">
       {products.map((item, key)=>{
         return <ProductsCard product={item} key={key}/>
       })}
