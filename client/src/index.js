@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { PersistGate } from 'redux-persist/integration/react';
 import { app } from './firebase/firebase'; 
 
-const root = ReactDOM.createRoot(document.querySelector('body'));
+const root = ReactDOM.createRoot(document.querySelector('#root'));
 
 root.render(
     <Provider store={store} app={app}>

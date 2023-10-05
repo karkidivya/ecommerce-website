@@ -1,9 +1,10 @@
 import React from 'react';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux"
-import { addToCart } from '../redux/bazaarSlice';
+import { addToCart } from '../../redux/bazaarSlice';
 import { ToastContainer, toast } from 'react-toastify';
+import './productsCard.css'
 
 export const ProductsCard = ({product}) => {
 
@@ -30,24 +31,24 @@ export const ProductsCard = ({product}) => {
 
 
   return (
-    <div  className='group relative'>
-      <div  className="w-full h-96 cursor-pointer overflow-hidden">
-        <img onClick={handleDetails} className=' h-full w-full object-cover group-hover:scale-110 duration-500'
+    <div  className='group relative productsCard'>
+      <div  className="h-52 flex items-center justify-center cursor-pointer overflow-hidden">
+        <img onClick={handleDetails} className='w-full aspect-auto group-hover:scale-110 duration-500'
          src={image} alt="" />
       </div>
       <div className="w-full border-[1px] px-2 py-4">
-          <div>
-            <h2 className='font-arial text-xl font-bold '>{title}</h2>
+          <div className = 'title-wraper'>
+            <h2 className='font-arial productsCardTitle '>{title}</h2>
           </div>
           <div className='flex justify-between items-center'>
-          <p>{category}</p>
+          {/* <p>{category}</p> */}
           <div className='flex gap-2 justify-end'>
             <p className='line-through text-gray-500'>Rs. {price}</p>
             <p className='font-semibold'>Rs. {oldPrice}</p>
           </div>
 
         </div>
-        <div className='flex justify-between mt-2'>
+        <div className='flex justify-center mt-3'>
           <button onClick={()=>dispatch(addToCart({
             _id: _id, 
             title: product.title,
@@ -55,8 +56,9 @@ export const ProductsCard = ({product}) => {
             price: product.price,
             quantity: 1,
             description: product.description
-          })) && toast.success(`${product.title} is added`)} className='bg-light-gray text-blue-600 hover:text-blue-400'>
-            add To Cart
+          })) && toast.success(`${product.title} is added`)} 
+          className='bg-light-gray text-blue-600 hover:text-blue-400'>
+            Add To Cart
           </button>
         </div>
         <div className='top-2 right-2 absolute'>

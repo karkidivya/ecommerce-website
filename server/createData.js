@@ -17,6 +17,7 @@ await returnValue.then( async (products) =>{
                                     title: products[i].title,
                                     price: products[i].price,
                                     description: products[i].description,
+                                    // add some discount to the original price 
                                     oldPrice: (products[i].price + Math.random() * 0.4 * products[i].price).toFixed( 2 ),
                                     isOld: false,
                                     rating: products[i].rating.rate,

@@ -3,7 +3,6 @@ import ReviewForm from "./ReviewForm";
 import ReviewItem from "./ReviewItem";
 
 const Review = ( {reviews} ) =>{
-    console.log( reviews. length)
     return <>
         <Grid container >
             <Grid item xs = { 6 }>
