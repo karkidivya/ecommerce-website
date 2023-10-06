@@ -31,9 +31,9 @@ export const ProductsCard = ({product}) => {
 
 
   return (
-    <div  className='group relative productsCard'>
-      <div  className="h-52 flex items-center justify-center cursor-pointer overflow-hidden">
-        <img onClick={handleDetails} className='w-full aspect-auto group-hover:scale-110 duration-500'
+    <div  className='group relative productsCard hover:scale-110 duration-500 h-full justify-items-center flex flex-col' onClick = { handleDetails } >
+      <div  className="flex items-center justify-center cursor-pointer overflow-hidden grow">
+        <img className='w-full object-cover'
          src={image} alt="" />
       </div>
       <div className="w-full border-[1px] px-2 py-4">

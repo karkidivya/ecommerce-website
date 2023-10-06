@@ -12,17 +12,17 @@ export const Header = () => {
     <div className='z-50 w-full h-30 bg-white border-b-[1px] z-index-1 sticky top-0 border-b-gray-800 font-titleFont '>
       <div className='max-w-screen-xl h-full mx-auto flex items-center justify-between'>
        <Link to='/'>
-          <div>
-            <img src={LogoLight} alt="LogoLight" className='w-28' />
+          <div className = ''>
+            <img src='/logo32.jpg' alt="LogoLight" className='w-14' />
           </div>
        </Link>
       <div className='flex gap-5 items-center'>
         <ul className='flex items-center gap-8 cursor-pointer'>
-          <Link to={'/'}><li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Home</li></Link>
-          <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300' >Pages</li>
-          <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300' >Shop</li>
-          <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300' >Element</li>
-          <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300' >Blog</li>
+          <Link to={'/'}><li className='text-base text-black font-bold hover:text-orange-900  cursor-pointer duration-300'>Home</li></Link>
+          <li className='text-base text-black font-bold hover:text-orange-900  cursor-pointer duration-300' >Pages</li>
+          <li className='text-base text-black font-bold hover:text-orange-900  cursor-pointer duration-300' >Shop</li>
+          <li className='text-base text-black font-bold hover:text-orange-900  cursor-pointer duration-300' >Element</li>
+          <li className='text-base text-black font-bold hover:text-orange-900  cursor-pointer duration-300' >Blog</li>
         </ul>
         
         <Link to='/cart'>
