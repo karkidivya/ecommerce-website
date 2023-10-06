@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useLoaderData } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
+import StarHalfIcon from '@mui/icons-material/StarHalf'
+import StarOutline from '@mui/icons-material/StarOutline'
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/bazaarSlice";
 import { ToastContainer, toast } from "react-toastify";
@@ -23,9 +25,9 @@ export const Product = () => {
     <>
       <div>
         <div className="max-w-screen-xl mx-auto my-10 flex gap-10">
-          <div className="w-2/5 relative">
+          <div className="w-2/5 relative flex items-center">
             <img
-              className="w-full h-[550px] object-cover"
+              className="w-full max-h-[550px]"
               src={details.image}
               alt=""
             />
@@ -40,20 +42,28 @@ export const Product = () => {
               <h2 className="text-3xl fot-semibold">{details.title}</h2>
               <div className="flex items-center gap-4 mt-3">
                 <div className="line-through font-base text-gray-500">
-                  ${details.oldPrice}
+                  Rs. {details.oldPrice}
                 </div>
                 <div className="text-2xl font-medium text-gray-900">
-                  ${details.price}
+                  Rs. {details.price}
                 </div>
               </div>
             </div>
             <div className="flex align-center gap-3 flex-start">
               <div>
-                <StarIcon />
-                <StarIcon />
-                <StarIcon />
-                <StarIcon />
-                <StarIcon />
+                {/* add star icons according to the rating */}
+                {(() => {{
+                  let StarIcons = []
+                  let i = 1;
+                  for( ; i < 6; i++ ){
+                    if( i < details.rating ) StarIcons.push(<StarIcon key = {i} />)  
+                    else if( i - details.rating  < 0.5 ) StarIcons.push(<StarHalfIcon key ={i } />)
+                    else StarIcons.push(<StarOutline key = {i} />)
+                  }
+                  return StarIcons 
+
+                }})()
+                }
               </div>
               <p className="text-sm mt-1 text-gray-500">
                 ({details.rating} Customer reviews)

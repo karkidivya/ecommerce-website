@@ -42,9 +42,10 @@ export const ProductsCard = ({product}) => {
           </div>
           <div className='flex justify-between items-center'>
           {/* <p>{category}</p> */}
-          <div className='flex gap-2 justify-end'>
-            <p className='line-through text-gray-500'>Rs. {price}</p>
+          <div className='flex flex-col mt-2'>
             <p className='font-semibold'>Rs. {oldPrice}</p>
+          
+            <p className='line-through text-gray-500'>Rs. {price}</p>
           </div>
 
         </div>
