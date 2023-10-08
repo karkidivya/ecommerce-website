@@ -1,4 +1,6 @@
 import * as React from 'react';
+import FileUpload from './FileUpload';
+import Input from '../input'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -59,6 +61,7 @@ export default function SignIn() {
               name="productName"
               autoFocus
             />
+            <Input />
             <TextField
               margin="normal"
               required
@@ -80,13 +83,9 @@ export default function SignIn() {
               name="oldPrice"
               label="Old Price"
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="image"
-              label="Image"
-            />
+            <label>Image</label>
+            <FileUpload setCredential = { () => {}}/>
+
             <TextField
               margin="normal"
               required

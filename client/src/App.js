@@ -8,7 +8,7 @@ import getReview  from './api/getReview'
 import { createBrowserRouter,Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
 import { Product } from './pages/product/product';
 import { Login } from './pages/login/Login';
-import Admin from './pages/admin/admin'
+import Admin from './pages/admin'
 import Dashboard from './components/admin/Dashboard';
 import AdminLogin from './components/admin/Login'
 import AddItem from './components/admin/AddItem'

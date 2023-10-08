@@ -1,4 +1,6 @@
-# ecommerce-website
-still working on it
-'''
-## some random commit to check
+# Ecommerce Website
+Ecommerce Webiste for Vaca. 
+
+## Contributin Rules
+
+To be decidedWebsite

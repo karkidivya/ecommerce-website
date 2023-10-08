@@ -8,6 +8,7 @@ const AdminNav = ()=>{
     const navigate = useNavigate();
 
     const [ selectedIndex, setSelectedIndex ] = useState( 0 )
+    
     const handleClick = ( action, index) =>{
         setSelectedIndex( index )
         action()
@@ -34,7 +35,7 @@ const AdminNav = ()=>{
                 selected = { selectedIndex === 0 }
                 onClick = { () =>{ handleClick( toDashboard, 0)}}
             >
-                <ListItemText sx = {{ textAlign : 'center'}} primary = 'Overview' />
+                <ListItemText sx = {{ textAlign : 'center'}} primary = 'Dashboard' />
             </ListItemButton>
 
             <ListItemButton
